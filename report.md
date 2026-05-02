@@ -1,3 +1,16 @@
+<style>
+  img {
+    max-width: 80%;
+    height: auto;
+    page-break-inside: avoid;
+    display: block;
+    margin: 0 auto;
+  }
+  h2, h3 {
+    page-break-after: avoid;
+  }
+</style>
+
 # Spring Boot Library Management Project Report
 
 ## 1. Introduction
