@@ -36,10 +36,10 @@ Upon application startup, Spring Boot automatically executes `data.sql` located 
 - **Exception Handling:** If an integrity violation occurs (e.g., trying to add an Author with an existing email, or a Book with a duplicate ISBN), the service layer catches the exception, and the controller utilizes `RedirectAttributes` to pass an error message back to the UI seamlessly.
 
 **Add Author Form:**
-![Add Author Form](./images/add_author_form_1777743486153.png)
+![Add Author Form](images/add_author_form_1777743486153.png)
 
 **Add Book Form:**
-![Add Book Form](./images/add_book_form_1777743516356.png)
+![Add Book Form](images/add_book_form_1777743516356.png)
 
 ### C. Read Operation
 - **Custom Inner Join Query:** The `BookRepository` implements a custom query to perform an inner join between Book and Author using `@Query("SELECT b FROM Book b JOIN FETCH b.author")`. This efficiently fetches the author details alongside the book.
@@ -47,17 +47,17 @@ Upon application startup, Spring Boot automatically executes `data.sql` located 
 - **JSP View:** The `index.jsp` page uses JSTL (`<c:forEach>`) to display the lists in an organized HTML table.
 
 **Home Page / List View:**
-![Home Page List View](./images/home_page_1777743475273.png)
+![Home Page List View](images/home_page_1777743475273.png)
 
 ### D. Update Operation
 - **Controller:** The application handles `GET` requests matching `/showFormForAuthorUpdate/{id}` to fetch the existing entity details by its ID and bind it to the view. `POST` requests to `/saveAuthor` or `/saveBook` utilize JPA's `save()` method, which performs an update (`UPDATE`) if the primary key exists.
 - **JSP View:** `update_author.jsp` and `update_book.jsp` forms populate the existing data into the input fields and contain a hidden field (`<form:hidden>`) to preserve the ID during submission.
 
 **Update Author Form:**
-![Update Author Form](./images/update_author_form_1777743534206.png)
+![Update Author Form](images/update_author_form_1777743534206.png)
 
 **Update Book Form:**
-![Update Book Form](./images/update_book_form_1777743568159.png)
+![Update Book Form](images/update_book_form_1777743568159.png)
 
 ## 4. Challenges Faced & Solutions
 
